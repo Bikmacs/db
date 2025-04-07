@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Статья – Часть 1{% endblock %}
+
+{% block content %}
+<div class="article-container">
+    <h1>{{ article.title }}</h1>
+    
+    <div class="author-info">
+        <h3>Автор: {{ article.author.name }}</h3>
+        <p class="author-bio">{{ article.author.bio }}</p>
+    </div>
+    
+    {{ article.content|safe }}
+    
+    <a href="{% url 'page2' %}" class="next-button" onclick="myFunction()">Далее →</a>
+</div>
+
+<script>    
+    function myFunction() {
+        alert("Вы переходите на 2 страницу!");
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Статья – Часть 2{% endblock %}
+
+{% block content %}
+<div class="article-container">
+    <h1>{{ article.title }}</h1>
+    
+    <div class="author-info">
+        <h3>Автор: {{ article.author.name }}</h3>
+        <p class="author-bio">{{ article.author.bio }}</p>
+    </div>
+    
+    {{ article.content|safe }}
+    
+    <a href="{% url 'index' %}" class="prev-button">← Назад</a>
+</div>
+{% endblock %}
